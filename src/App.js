@@ -1,21 +1,21 @@
 import React from 'react';
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
+  Switch
 } from "react-router-dom";
 import PrivatePage from './PrivatePage'
 import PublicPage from './PublicPage'
 import './App.css';
+import PrivateRouter from './PrivateRouter';
+import PublicRouter from './PublicRouter';
 
 function App() {
   return (
     <div className="App">
       <Router>
         <Switch>
-          <Route exact path="/" component={PublicPage} />
-          <Route path="/private" component={PrivatePage} />
+          <PrivateRouter path="/private" component={PrivatePage} />
+          <PublicRouter path="/" component={PublicPage} />
         </Switch>
       </Router>
     </div>
